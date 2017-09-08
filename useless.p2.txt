@@ -1,3 +1,0 @@
-name: Arjun Patel
-
-email: apatel428@gatech.edu
