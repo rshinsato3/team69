@@ -1,0 +1,72 @@
+//Set a default task, so if you don't provide any, these will be executed.
+defaultTasks   'task1', 'task2'
+
+//Import a bunch of Java related tasks to help you
+//By default production code should be in src/main/java
+//Test code should be in src/test/java
+//Resources to put in the jar should be in src/main/resources
+//This gives you a lot of tasks predefined for java, but the most important is build
+//build will compile the code, run the tests, and make the jar file.
+//also used a lot is clean, which will delete all the files made by build
+//also available is assemble which will compile the code but not run the test
+//also available is check which will compile and run the tests
+apply plugin: 'java'
+
+apply plugin: 'findbugs'
+
+apply plugin: 'pmd'
+
+apply plugin: 'application'
+
+//Define a simple task ourselves
+task hello << {
+   println 'Hello World'
+}
+
+//Define a simple task that depends on another task
+task intro(dependsOn: hello) << {
+   println 'I am gradle'
+}
+
+task runp1(dependsOn:build)<< {
+   mainClassName = "HelloWorld"
+}
+//Define a task
+task task1 << {
+	 String aString = "SomE DiFFerEnt CAse ChARs"
+	 println "Original String: " + aString
+	 println "All Upper: " + aString.toUpperCase()
+}
+
+//Define another task
+task task2 << {
+    println 'Task 2'
+}
+
+//set up some variables
+sourceCompatibility = 1.8
+version = '1.0'
+mainClassName='HelloWorld'
+
+//Define the contents of the jar file
+jar  {
+  manifest {
+     attributes  'Implementation-Title' : 'Gradle Quickstart' ,
+                 'Implementation-Version' : version,
+                 'Main-Class' : 'HelloWorld' 
+    }
+
+      destinationDir = file('.')
+      archiveName = 'hello.jar'
+}
+
+dependencies {
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+	  testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+//setup a location for repositories of any libraries that need to be downloaded
+repositories {
+   mavenCentral()
+}
+
