@@ -1,1 +1,3 @@
-more useless info to delete
+name: Arjun Patel
+
+email: apatel428@gatech.edu
