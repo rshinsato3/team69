@@ -63,6 +63,7 @@ jar  {
 dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
 	  testCompile group: 'junit', name: 'junit', version: '4.+'
+    compile files('./lib/resources.jar')
 }
 
 //setup a location for repositories of any libraries that need to be downloaded

@@ -1,4 +1,6 @@
 package edu.gatech.oad.antlab.person;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *  A simple class for person 1
@@ -30,13 +32,13 @@ public class Person1 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-          if (input.length < 2) {
+          if (input.length() < 2) {
             return input;
           }
           else {
 	    List<Character> list = new ArrayList<Character>();
             char[] arr= input.toCharArray();
-            for(char a: array) {
+            for(char a: arr) {
               list.add(a);
             }
 	    char firstChar = arr[0];
