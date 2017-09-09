@@ -1,5 +1,5 @@
 //Set a default task, so if you don't provide any, these will be executed.
-defaultTasks   'task1', 'task2'
+defaultTasks   'jar'
 
 //Import a bunch of Java related tasks to help you
 //By default production code should be in src/main/java
@@ -11,10 +11,6 @@ defaultTasks   'task1', 'task2'
 //also available is assemble which will compile the code but not run the test
 //also available is check which will compile and run the tests
 apply plugin: 'java'
-
-apply plugin: 'findbugs'
-
-apply plugin: 'pmd'
 
 apply plugin: 'application'
 
@@ -53,11 +49,11 @@ jar  {
   manifest {
      attributes  'Implementation-Title' : 'Gradle Quickstart' ,
                  'Implementation-Version' : version,
-                 'Main-Class' : 'HelloWorld' 
+                 'Main-Class' : 'edu.gatech.oad.antlab./main'
     }
 
       destinationDir = file('.')
-      archiveName = 'hello.jar'
+      archiveName = 'test.jar'
 }
 
 dependencies {
