@@ -49,7 +49,7 @@ jar  {
   manifest {
      attributes  'Implementation-Title' : 'Gradle Quickstart' ,
                  'Implementation-Version' : version,
-                 'Main-Class' : 'edu.gatech.oad.antlab./main'
+                 'Main-Class' : 'edu.gatech.oad.antlab.pk1.main'
     }
 
       destinationDir = file('.')
