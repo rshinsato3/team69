@@ -35,21 +35,29 @@ public class Person1 {
           if (input.length() < 2) {
             return input;
           }
-          else {
+          else
+          {
 	    List<Character> list = new ArrayList<Character>();
             char[] arr= input.toCharArray();
             for(char a: arr) {
               list.add(a);
             }
-	    char firstChar = arr[0];
-            char secChar = arr[1];
-            arr[0] = arr[arr.length - 2];
-            arr[1] = arr[arr.length - 1];
-            for (int x = arr.length - 2 ; x > 2; x--) {
-                   arr[x] = arr[x - 2]; 
-                }
-		
-	    return arr.toString();
+	    char firstChar = arr[arr.length - 2];
+        char secChar = arr[arr.length - 1];
+        arr[0] = arr[arr.length - 2];
+        arr[1] = arr[arr.length - 1];
+        for (int x = arr.length - 1; x > 1; x--) {
+                arr[x] = arr[x - 2]; 
+        }
+        arr[0] = firstChar;
+        arr[1] = secChar;
+        String str = "";
+
+        StringBuilder result = new StringBuilder(arr.length);
+        for (Character c : arr) {
+        	result.append(c);
+        }
+        return result.toString();
           }
 	}
 	

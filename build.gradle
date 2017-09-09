@@ -12,6 +12,8 @@ defaultTasks   'jar'
 //also available is check which will compile and run the tests
 apply plugin: 'java'
 
+apply plugin: 'pmd'
+
 apply plugin: 'application'
 
 //Define a simple task ourselves
@@ -49,9 +51,8 @@ jar  {
   manifest {
      attributes  'Implementation-Title' : 'Gradle Quickstart' ,
                  'Implementation-Version' : version,
-                 'Main-Class' : 'edu.gatech.oad.antlab.pk1.main'
-    }
-
+                 'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain'
+               }
       destinationDir = file('.')
       archiveName = 'test.jar'
 }
